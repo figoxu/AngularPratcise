@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script
+            src="../angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ParentController">
+    <div ng-controller="ChildController">
+        <a ng-click="sayHello()">Say hello</a>
+    </div>
+    {{ person }}
+</div>
+<script type="text/javascript">
+    /**
+     * ChildController can use ParentController's scope value
+     */
+    angular.module('myApp', [])
+            .controller('ParentController', function ($scope) {
+                $scope.person = {greeted: false};
+            })
+            .controller('ChildController', function ($scope) {
+                $scope.sayHello = function () {
+                    $scope.person.name = 'Ari Lerner';
+                };
+            });
+</script>
+</body>
+</html>
