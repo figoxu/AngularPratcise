@@ -1,0 +1,3 @@
+AngularPratcise
+
+Controller不应该太臃肿，简洁的Controller，可以把部分方法封装在Service里，在注入进来
